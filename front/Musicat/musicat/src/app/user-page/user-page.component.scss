@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Seymour One', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  src: local('Seymour One'), url('https://fonts.googleapis.com/css?family=Seymour+One') format('truetype');
+}
+
+.container{
+  width: 65%;
+  margin: auto;
+}
+.profile-photo{
+  border-radius: 50%;
+  border: 3px solid #700716;
+  box-shadow: 0 0 7px #555;
+  width: 100%;
+}
+
+.subscribe-block{
+  width: 25%;
+  padding: 15px;
+}
+.info-block{
+  width: 73%;
+}
+.page-block {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  float: left;
+}
+
+.column {
+  margin-right: 2%;
+}
+
+.name{
+  font-family: 'Seymour One', sans-serif;
+  font-size: 30px;
+  padding: 15px;
+}

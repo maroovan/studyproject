@@ -1,0 +1,87 @@
+
+p, ol, ul, ol, li, input, a  {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.30px;
+  font-weight: 400;
+}
+
+ul{
+
+}
+a {
+  color: white;
+}
+
+.toolbar-layout{
+  background: #880717;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  padding: 21px 0;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  height: 64px;
+}
+
+.nav-link{
+  margin: 0;
+  padding: 24px 16px;
+  cursor: pointer;
+}
+a.nav-link.home{
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+  font-size: 60px;
+  text-color: white;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  padding-bottom: 2px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.top-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.top-menu ul {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+
+
+.nav-link.home img {
+  position: relative;
+  margin-left: 30px;
+  margin-top: -21px;
+  top: 20px;
+  height: 60px;
+}
