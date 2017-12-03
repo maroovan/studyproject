@@ -1,14 +1,11 @@
 
-p, ol, ul, ol, li, input, a  {
+ul, li, a  {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.30px;
   font-weight: 400;
 }
 
-ul{
-
-}
 a {
   color: white;
   text-decoration: none;
@@ -39,7 +36,7 @@ a.nav-link.home{
   font-family: 'Indie Flower', cursive;
   font-weight: bold;
   font-size: 60px;
-  text-color: white;
+  color: white;
 }
 
 li {

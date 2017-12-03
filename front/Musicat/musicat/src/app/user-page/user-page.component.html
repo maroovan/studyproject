@@ -1,11 +1,35 @@
 
 <div class ="container">
-  <div class="subscribe-block page-block column">
+  <div class="subscribe-block page-block ">
     <img class = "profile-photo" src="../../assets/no-photo.png">
-    <app-button></app-button>
+    <a href="sbscr" class = "button">Subscribe</a>
   </div>
-  <div class="info-block page-block">
-    <div class="name">User Name</div>
+  <div class="info-block">
+    <div *ngIf = "!user" class="name page-block">User Name</div>
+    <div *ngIf = "user" class="name page-block">{{user.firstName}} {{user.lastName}}</div>
+    <div class="page-block">About</div>
+    <div class="page-block">
+      <ul class = "user-box">
+        <li>
+          <a href="homepage/Favorites" >
+            <img class= "img-icon" src = "../../assets/favourite.png">
+            Favorites
+          </a>
+        </li>
+        <li >
+          <a href="homepage/ADDed">
+            <img class= "img-icon" src = "../../assets/Star.png">
+            ADDed
+          </a>
+        </li>
+        <li >
+          <a href="homepage/Subscribe">Subscribe</a>
+        </li>
+        <li >
+          <a href="homepage/Subscribers">Subscribers</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 

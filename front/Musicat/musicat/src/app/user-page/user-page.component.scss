@@ -6,9 +6,12 @@
 }
 
 .container{
-  width: 65%;
+  width: 80%;
   margin: auto;
+  float: none;
+  min-height: 530px;
 }
+
 .profile-photo{
   border-radius: 50%;
   border: 3px solid #700716;
@@ -18,24 +21,56 @@
 
 .subscribe-block{
   width: 25%;
+  float: left;
   padding: 15px;
 }
+
 .info-block{
-  width: 73%;
+  width: 70%;
+  float: right;
 }
-.page-block {
-  background: white;
-  border-radius: 2px;
-  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-  float: left;
-}
-
-.column {
-  margin-right: 2%;
-}
-
 .name{
   font-family: 'Seymour One', sans-serif;
   font-size: 30px;
   padding: 15px;
+}
+
+.page-block {
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  padding: 10px;
+  margin: 10px;
+}
+
+a {
+  color: #610616;
+  text-decoration: none;
+}
+
+li {
+  margin-right: 30px;
+  list-style-type: none;
+}
+
+.user-box{
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  text-align: center;
+}
+
+.img-icon{
+  width: 20px;
+  height: 20px;
+  float: left;
+}
+
+.button{
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(198, 0, 17);
+  box-shadow: 0 -3px rgb(104, 0, 9) inset;
 }

@@ -16,7 +16,7 @@ export class LogInComponent implements OnInit {
   returnUrl: string;
 
   constructor(
-    private route: ActivatedRoute,
+    private aRoute: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
     private alertService: AlertService) { }
@@ -26,7 +26,7 @@ export class LogInComponent implements OnInit {
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.aRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 
   login() {
