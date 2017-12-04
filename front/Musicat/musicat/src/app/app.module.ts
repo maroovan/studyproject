@@ -16,6 +16,9 @@ import { AuthenticationService } from './authentication.service';
 import { UserService} from './user.service';
 
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { MusicianPageComponent } from './musician-page/musician-page.component';
+import { TracksComponent } from './tracks/tracks.component';
+import { AlbumsComponent } from './albums/albums.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     HeaderComponent,
     FooterComponent,
     LogInComponent,
-    SignUpComponent
+    SignUpComponent,
+    MusicianPageComponent,
+    TracksComponent,
+    AlbumsComponent
   ],
   imports: [
     BrowserModule,
