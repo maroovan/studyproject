@@ -8,6 +8,7 @@
         android:id="@+id/search"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_dropdown_light_frame"
         android:iconifiedByDefault="false">
 
         <requestFocus />

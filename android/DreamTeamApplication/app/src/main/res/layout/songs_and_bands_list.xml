@@ -14,14 +14,30 @@
         android:scaleY="0.7"
         android:src="@drawable/icn_lyrics_icon_big"></ImageView>
 
-    <TextView
-        android:id="@+id/any_song_title"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
         android:layout_toRightOf="@+id/icon"
-        android:text="@+id/any_song_title"
-        android:textSize="20dp"></TextView>
+        >
+
+        <TextView
+            android:id="@+id/any_song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Song_title"
+            android:textSize="20dp"></TextView>
+
+        <TextView
+            android:id="@+id/any_band_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/any_song_title"
+            android:text="Band_name"
+            android:textSize="14dp"
+            android:textStyle="italic"></TextView>
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -1,28 +1,22 @@
 package com.dreamproject.dreamteam.dreamteamapplication;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Band_Songs extends AppCompatActivity {
 
     ListView SONGS;
     String BAND_NAME; //сюда мы получим имя группы
 
-    static final String[] FAKE_SONGS = new String[] { "Song 1", "Song 2", "Song 3", "Song 4",
-            "Song 5", "Song 6", "Song 7", "Song 8", "Song 9",
-            "Song 10", "Song 11", "Song 12", "Song 13"};
+    static final String[] FAKE_SONGS = new String[] { "Название песни 1", "Название песни  2", "Название песни  3", "Название песни  4",
+            "Название песни  5", "Название песни  6", "Название песни  7", "Название песни  8", "Название песни  9",
+            "Название песни  10", "Название песни  11", "Название песни  12", "Название песни  13"};
 
 
     public Band_Songs() {
@@ -37,20 +31,38 @@ public class Band_Songs extends AppCompatActivity {
         setContentView(R.layout.band_songs);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.band_toolbar);
-        BAND_NAME = getIntent().getStringExtra("EXTRA_SESSION_ID"); //получаем название группы
+        BAND_NAME = getIntent().getStringExtra("SONG_NAME"); //получаем название группы
         toolbar.setTitle(BAND_NAME); //показываем его в тулбаре
         setSupportActionBar(toolbar);
 
 
-        if (getSupportActionBar() != null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         SONGS = (ListView) findViewById(R.id.main_band_songs);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.songs_list, R.id.label, FAKE_SONGS);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.songs_list, R.id.any_song_title, FAKE_SONGS);
         SONGS.setAdapter(adapter);
 
+        SONGS.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //получаем название группы
+                String item = (String) SONGS.getAdapter().getItem(position);
+                //посылаем его в следующий активити и запускаем активити
+                GoToSong(position);
+            }
+        });
     }
+
+        void GoToSong(int position)
+         {
+            String item_song_title = (String) SONGS.getAdapter().getItem(position);
+            //посылаем его в следующий активити и запускаем активити
+            Intent intent = new Intent(this , View_Song.class);
+             intent.putExtra("SONG_NAME", item_song_title);
+              intent.putExtra("BAND_NAME", BAND_NAME);
+            startActivity(intent);
+         }
 
 
 

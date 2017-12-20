@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="20pt"
-        android:layout_height="20pt"
-        android:layout_marginBottom="0pt"
-        android:layout_marginLeft="10pt"
-        android:layout_marginRight="10pt"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="0dp"
         android:scaleX="0.7"
         android:scaleY="0.7"
         android:src="@drawable/icn_band_icon_big"></ImageView>
 
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/any_song_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="20px"></TextView>
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/icon"
+        android:text="@+id/any_song_title"
+        android:textSize="20dp"></TextView>
 
-</LinearLayout>
+</RelativeLayout>
