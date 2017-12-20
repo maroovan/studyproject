@@ -12,5 +12,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyMaterialThemeWithActionBar" parent="MyMaterialThemeWithActionBar.Base">
+
+    </style>
+
+    <style name="MyMaterialThemeWithActionBar.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
+        <item name="homeAsUpIndicator">@drawable/icn_back_big</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
 
 </resources>

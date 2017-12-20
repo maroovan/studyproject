@@ -1,28 +1,19 @@
 package com.dreamproject.dreamteam.dreamteamapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_logged extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -34,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.icn_tab_small_profile
     };
 
-    public MainActivity() {
+    public MainActivity_logged() {
         // Required empty public constructor
     }
 
@@ -68,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new fragment_main_page(), "Главная");
-        adapter.addFrag(new fragment_log_in(), "Избранное");
-        adapter.addFrag(new fragment_log_in(), "Профиль");
+        adapter.addFrag(new fragment_favorites_info(), "Избранное");
+        adapter.addFrag(new fragment_profile_page(), "Профиль");
         viewPager.setAdapter(adapter);
     }
 
