@@ -46,13 +46,35 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/view_band_name"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="30dp"
             android:text="SONG_LYRICS"
             android:textAlignment="center"
             android:textSize="18dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_song_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:scaleX="0.7"
+            android:scaleY="0.7" />
+
+        <ToggleButton
+            android:id="@+id/btn_favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ratingBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:checked="false"
+            android:text="ToggleButton"
+            android:textOff="В избранное"
+            android:textOn="Добавлено" />
 
     </RelativeLayout>
 </ScrollView>

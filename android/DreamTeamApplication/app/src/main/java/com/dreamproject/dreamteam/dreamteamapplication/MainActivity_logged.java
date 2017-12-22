@@ -1,6 +1,7 @@
 package com.dreamproject.dreamteam.dreamteamapplication;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +19,10 @@ public class MainActivity_logged extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+   boolean logged_in = true;
+
+    boolean notify; //переменная которая говорит, добавили ли мы песню или нет
 
     private int[] tabIcons = {
             R.drawable.icn_tab_small_search,
@@ -46,6 +51,13 @@ public class MainActivity_logged extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         //сюда мы будем отображать фрагменты
         setupTabIcons();
+
+        if (getIntent().getStringExtra("SONG_IS_ADDED").equals("YES"))
+        {
+            Snackbar.make(findViewById(R.id.main_linear), "Песня добавлена",
+                    Snackbar.LENGTH_SHORT)
+                    .show();
+        }
 
     }
 

@@ -52,6 +52,7 @@ public class fragment_log_in extends Fragment{
             public void onClick(View view)
             {
                 Intent intent = new Intent(getActivity(), MainActivity_logged.class);
+                intent.putExtra("SONG_IS_ADDED", "NO");
                 getActivity().finish();
                 startActivity(intent);
             }

@@ -3,18 +3,18 @@ package com.dreamproject.dreamteam.dreamteamapplication;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 public class View_Song extends AppCompatActivity {
 
     String SONG_GET_NAME; //сюда мы получим имя песни
     String BAND_GET_NAME; //сюда мы получим имя группы
+    String GET_LYRICS; //сюда мы получим имя группы
     TextView SONGTITLE;
     TextView BANDTITLE;
     TextView SONGTEXT;
-    String Text = "Somebody once told me the world is gonna roll me\n" +
+
+    String Lyrics = "Somebody once told me the world is gonna roll me\n" +
             "I ain't the sharpest tool in the shed\n" +
             "She was looking kind of dumb with her finger and her thumb\n" +
             "In the shape of an \"L\" on her forehead\n\n" +
@@ -68,7 +68,6 @@ public class View_Song extends AppCompatActivity {
 
 
 
-
     public View_Song() {
         // Required empty public constructor
     }
@@ -87,12 +86,12 @@ public class View_Song extends AppCompatActivity {
 
         BANDTITLE = (TextView) findViewById(R.id.view_band_name);
         BAND_GET_NAME = getIntent().getStringExtra("BAND_NAME"); //получаем название группы
-        BANDTITLE.setText("by " + BAND_GET_NAME);
+        BANDTITLE.setText(" - " + BAND_GET_NAME + " - ");
 
         SONGTEXT = (TextView) findViewById(R.id.view_song_text);
-        SONGTEXT.setText(Text);
+        SONGTEXT.setText(Lyrics);
 
-        toolbar.setTitle(SONG_GET_NAME); //показываем его в тулбаре
+        toolbar.setTitle(""); //ничего не показываем в тулбаре
         setSupportActionBar(toolbar);
 
 

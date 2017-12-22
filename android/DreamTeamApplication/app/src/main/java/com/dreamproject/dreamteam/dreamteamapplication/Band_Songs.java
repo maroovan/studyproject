@@ -40,7 +40,7 @@ public class Band_Songs extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        SONGS = (ListView) findViewById(R.id.main_band_songs);
+        SONGS = (ListView) findViewById(R.id.main_band_list);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.songs_list, R.id.any_song_title, FAKE_SONGS);
         SONGS.setAdapter(adapter);
 

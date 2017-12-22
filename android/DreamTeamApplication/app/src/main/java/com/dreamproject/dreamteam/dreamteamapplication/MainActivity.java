@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    boolean logged_in = false;
+
     private int[] tabIcons = {
             R.drawable.icn_tab_small_search,
             R.drawable.icn_tab_small_favorites,

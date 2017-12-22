@@ -4,6 +4,7 @@ package com.dreamproject.dreamteam.dreamteamapplication;
  * Created by MSI on 27.11.2017.
  */
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,7 @@ public class ListViewAdapter extends BaseAdapter {
         this.arraylist = new ArrayList<AnimalNames>();
         this.arraylist.addAll(animalNamesList);
     }
+
 
     public class ViewHolder {
         TextView name;
