@@ -45,6 +45,7 @@ public class fragment_main_page extends Fragment {
     SearchView SEARCH;
     View view;
     FloatingActionButton btn_add_songs;
+    FloatingActionButton btn_update;
 
 
     static final String[] FAKE_BANDS = new String[] { "Beatles", "Bibio", "Disasterpeace", "King Gizzard The Lizard Wizard",
@@ -98,6 +99,18 @@ public class fragment_main_page extends Fragment {
                 Log.i("Add Song", " - success");
                 Intent intent = new Intent(getActivity(), Add_Song.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_update = (FloatingActionButton) view.findViewById(R.id.btn_update);
+        btn_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("Update", " - success");
+                FAKE_BANDS[0] = "The Beatles";
+                ArrayAdapter<String> adapter_main = new ArrayAdapter<String>(getActivity(),R.layout.bands_list, R.id.any_song_title, FAKE_BANDS);
+                BANDS.setAdapter(adapter_main);
+                setDynamicHeight(BANDS);
             }
         });
 

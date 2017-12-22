@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,7 @@ import android.widget.TextView;
 
 
 
-public class fragment_favorites_info extends Fragment{
+public class fragment_favorites_info extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     public fragment_favorites_info() {
         // Required empty public constructor
@@ -29,6 +30,8 @@ public class fragment_favorites_info extends Fragment{
     ListView AddedSongs;
     TextView CountSongs;
     ScrollView scrollview;
+    SwipeRefreshLayout update;
+    ListViewAdapter list_adapter;
 
     private static final String[] FAKE_SONGS = { "Название песни 1", "Название песни 2", "Название песни 3", "Название песни 4",
             "Название песни 5", "Название песни 6", "Название песни 7", "Название песни 8", "Название песни 9",
@@ -69,6 +72,9 @@ public class fragment_favorites_info extends Fragment{
                 startActivity(intent);
             }
         });
+
+        update = (SwipeRefreshLayout) view.findViewById(R.id.update_fav);
+        update.setOnRefreshListener(this);
 
         return view;
     }
@@ -173,6 +179,16 @@ public class fragment_favorites_info extends Fragment{
             return convertView;
         }
 
+    }
+
+
+    @Override //при обновлении
+    public void onRefresh() {
+        FAKE_SONGS[0] = FAKE_SONGS[0] + "0";
+        list_adapter = new ListViewAdapter(getActivity(), FAKE_SONGS, FAKE_BANDS);
+        AddedSongs.setAdapter(list_adapter); //настраиваем
+
+        update.setRefreshing(false);
     }
 
 

@@ -51,7 +51,7 @@ public class fragment_log_in extends Fragment{
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getActivity(), MainActivity_logged.class);
+                Intent intent = new Intent(getActivity(), Start_log_in.class);
                 intent.putExtra("SONG_IS_ADDED", "NO");
                 getActivity().finish();
                 startActivity(intent);
@@ -64,6 +64,9 @@ public class fragment_log_in extends Fragment{
             public void onClick(View view)
             {
                 Log.d(TAG, "register");
+                Intent intent = new Intent(getActivity(), Start_register.class);
+                intent.putExtra("SONG_IS_ADDED", "NO");
+                startActivity(intent);
             }
         });
 

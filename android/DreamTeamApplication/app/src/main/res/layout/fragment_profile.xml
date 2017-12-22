@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
 
         android:layout_width="wrap_content"
@@ -105,17 +104,24 @@
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="18sp" />
 
-        <ListView
-            android:id="@+id/profile_added_songs"
+        <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/update"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/layout"
-            android:layout_marginTop="40dp"
-            android:background="@android:color/background_light"
-            android:footerDividersEnabled="false"
-            android:headerDividersEnabled="false"
-            android:minHeight="128dp"
-            android:scrollbars="none" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/layout">
+
+            <ListView
+                android:id="@+id/profile_added_songs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@android:color/background_light"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                android:minHeight="128dp"
+                android:scrollbars="none" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </RelativeLayout>
 </ScrollView>

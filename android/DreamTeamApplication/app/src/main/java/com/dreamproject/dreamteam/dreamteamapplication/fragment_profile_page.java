@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 
-public class fragment_profile_page extends Fragment{
+public class fragment_profile_page extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
     public fragment_profile_page() {
         // Required empty public constructor
@@ -30,9 +31,9 @@ public class fragment_profile_page extends Fragment{
     ListView AddedSongs;
     TextView CountSongs;
     ScrollView scrollview;
+    SwipeRefreshLayout update;
     ListViewAdapter list_adapter;
 
-    boolean start = false;
 
     private static final String[] FAKE_SONGS = { "Название песни 1", "Название песни 2", "Название песни 3", "Название песни 4",
             "Название песни 5", "Название песни 6", "Название песни 7", "Название песни 8", "Название песни 9",
@@ -89,7 +90,8 @@ public class fragment_profile_page extends Fragment{
             }
         });
 
-        start = true;
+        update = (SwipeRefreshLayout) view.findViewById(R.id.update);
+        update.setOnRefreshListener(this);
 
         return view;
     }
@@ -202,27 +204,14 @@ public class fragment_profile_page extends Fragment{
 
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            scrollview.post(new Runnable() { //скролим вниз, затем вверх, чтобы оказаться наверху страницы (КОСТЫЛЬ)
-                public void run() {
-                    if (start) {
-                        FAKE_SONGS[1] = FAKE_SONGS[1] + "кек";
 
-                        list_adapter = new ListViewAdapter(getActivity(), FAKE_SONGS, FAKE_BANDS);
-                        AddedSongs.setAdapter(list_adapter); //настраиваем
+    @Override //при обновлении
+    public void onRefresh() {
+        FAKE_SONGS[0] = FAKE_SONGS[0] + "0";
+        list_adapter = new ListViewAdapter(getActivity(), FAKE_SONGS, FAKE_BANDS);
+        AddedSongs.setAdapter(list_adapter); //настраиваем
 
-                        //обновляем скролл, ибо заебал глючить!
-                        scrollview.fullScroll(View.FOCUS_DOWN);
-                        scrollview.fullScroll(View.FOCUS_UP);
-                    }
-                }
-            });
-        }
-        else {
-        }
+        update.setRefreshing(false);
     }
 
 }
